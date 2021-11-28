@@ -1,0 +1,121 @@
+                    ML-Algortithms
+1. Regression : Dealing linear relation ship
+Linear Regression
+-->Robust Regression
+2.Multiple Regression,Feature importance
+    2a.OLS
+    2b.Gradient Decent(GD)
+              -->Batch GD
+              -->Stocastic GD
+           ==>SGDRegressior
+           -->Mini Batch GD
+
+3.Regularized Regression:
+     3a. Ridge
+     3b. Lasso
+     3c. Elastic Net
+4.Polynomial Regression
+5.Performance evaliuation
+
+2. Classification :Dealing Non-Linear Relationships
+1.Logistic Regression(SigmoidCurve) :stochastic GradientDecent
+                       Estimate Coefficent
+     Performance Measure : Stratified K-fold
+                           Confusion matrix
+                           Precision
+                           Recall
+                           F1 Score
+                           Precision/RecallTradeoff
+                           ROC
+
+2. SVM :
+        Linear SVM Classification
+        Polynomial Kernal
+        Radical Basis Function/Gaussian Kernel
+        Support Vector Regression
+        Grid Search
+        Hyper Parameter tuning
+3.Decission Tree :
+   1. Classification: Graphviz(ibmhr)
+                      Bagging Classifier(BootStrap-reduce the variance)
+                      ID3,C4.5,C5.0,CART,CHAID
+                      GINI
+                      Entropy
+                      Information Gain
+   2. Regression    : Regularization
+                      HR Attrition prediction
+2.Random Forest
+3.AdaBoost
+Feature importance Revisited
+
+
+
+
+
+
+sgdclassifer == Crossvalescore both are same
+
+
+Data Pre-Processing
+1.Standardization/Mean removal//Variance Scaling
+.Min-Max or scaliing Feature to a Range
+.Normalization
+.Binarization
+.Encoding categorical feature
+  =>LabelEncoder
+  =>One Hot/One-of-K Encoding
+2.Variance Bias Trade off
+.Validation Curve
+.Learning Curve
+3.Cross Validation-Hot outCV,K-fold CV,stratified k-fold
+
+
+Imbalanced DataSet: They are 2-types
+1.Using Resampling Teachnique to Balance the data: 
+     1.Under sampling : under sampling balance the dataset by reducing the size of the abudant class.
+--> As this teachinque involves removel of data,or data loss,it can never be used for secnarios where we have less quantity of data
+--> But it can be effectively used for scenarios where we have abundant amount of data
+     2.Over sampling : Oversampling balances the dataset by incersing the size of rare samples by using repetition,'bootstrapping' etc.
+--> This method is Prefered when the Dataset is " Not Huge "
+Statical Resampling is a Teachnique which is used to balance all the classes present in a data
+sample to improve the accuracy and quantify the uncertainity of a population parameter
+
+Major Takeaway Points :
+> There is no absolute advantage of one resampling method over another
+> Here, is few rules of thumb while using over and under-sampling 
+ >>Consider testing under-sampling when you have "a lot data"
+ >>Consider testing Over-sampling when you dont have a "Lot of data"
+
+
+
+#### Blogs:
+1.https://sebastianraschka.com/
+2.https://explained.ai/
+3.https://ruder.io/
+4.https://distill.io/
+5.https://iamtrask.github.io/
+6.https://cs.stanford.edu/people/karpathy/
+7.https://colah.github.io/posts/2014-10-Visualizing-MNIST/
+8.https://machinelearningmastery.com/
+9.https://www.analyticsvidhya.com/myfeed/
+10.https://actsusanli.medium.com/
+11.http://www.becominghuman.org/
+12.https://www.datadriveninvestor.com/
+13.https://towardsdatascience.com/
+14.https://medium.com/
+
+
+setup.sh
+
+mkdir -p ~/.streamlit/
+
+echo "\
+[server]\n\
+port = $PORT\n\
+enableCORS = false\n\
+headless = true\n\
+\n\
+" > ~/.streamlit/config.toml
+
+Procfile
+web: sh setup.sh && streamlit run app.py
